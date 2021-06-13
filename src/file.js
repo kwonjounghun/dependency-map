@@ -2,7 +2,16 @@ const vscode = require('vscode');
 const path = require('path');
 
 const getRelativePath = (path) => {
-    return path.replace(`${vscode.workspace.workspaceFolders}/`, '');
+    return path.replace(`${vscode.workspace.rootPath}/`, '');
+};
+
+const openFile = (relativePath) => {
+    var openPath = vscode.Uri.file(
+        `${vscode.workspace.rootPath}/${relativePath}`
+    )
+    vscode.workspace.openTextDocument(openPath).then((doc) => {
+        vscode.window.showTextDocument(doc)
+    })
 };
 
 const RelativeFilePath = {
@@ -22,5 +31,9 @@ const RelativeFilePath = {
 }
 
 module.exports = {
+    openFile,
     RelativeFilePath,
+    getFileName(filePath) {
+        return path.basename(filePath, path.extname(filePath))
+    },
 }
