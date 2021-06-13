@@ -1,5 +1,5 @@
 {
-	"name": "react-dependency-map",
+	"name": "dependency-map",
 	"displayName": "dependency-map",
 	"description": "",
 	"version": "0.0.1",
@@ -10,34 +10,34 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:react-dependency-map.helloWorld"
+		"onCommand:dependency-map.helloWorld"
 	],
 	"main": "./extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "react-dependency-map.helloWorld",
-				"title": "Hello World"
+				"command": "dependency-map.helloWorld",
+				"title": "gn dependency"
 			}
 		],
 		"menus": {
 			"explorer/context": [
 				{
-					"command": "react-dependency-map.helloWorld",
-					"title": "Hello World"
+					"command": "dependency-map.helloWorld",
+					"title": "gn dependency"
 				}
 			]
 		},
 		"configuration": {
-            "title": "react-dependency-map", 
+            "title": "dependency-map", 
             "properties": {
-                "react-dependency-map.exclude": {
+                "dependency-map.exclude": {
                     "type": "string",
                     "scope": "resource",
                     "default": "node_modules/",
                     "description": "Define a regex to exclude dependencies for being listed"
                 },
-                "react-dependency-map.maxDepth": {
+                "dependency-map.maxDepth": {
                     "type": "number",
                     "scope": "resource",
                     "default": 0,
@@ -45,51 +45,51 @@
                     "maximum": 99,
                     "description": "the maximum depth to cruise; 0 <= n <= 99 (default: 0, which means 'infinite depth')"
                 },
-                "react-dependency-map.layout": {
+                "dependency-map.layout": {
                     "type": "string",
                     "scope": "resource",
                     "default": "directed",
                     "enum": ["directed", "undirected", "undirectedCompressed", "clustered", "circular", "radial", "treemap"],
                     "description": "Layout for the diagram"
                 },
-                "react-dependency-map.prefix": {
+                "dependency-map.prefix": {
                     "type": "string",
                     "scope": "resource",
                     "description": "Prefix to add to each node URL. For example, you can use this to alllow opening the file in github"
                 },
-                "react-dependency-map.moduleSystems": {
+                "dependency-map.moduleSystems": {
                     "type": "array",
                     "scope": "resource",
                     "default": ["amd", "cjs", "es6"],
                     "description": "Define the module systems to be used. Supported: ['amd', 'cjs', 'es6', 'tsd']"
                 },
-                "react-dependency-map.tsConfig": {
+                "dependency-map.tsConfig": {
                     "type": "string",
                     "scope": "resource",
                     "default": "tsconfig.json",
                     "description": "Specify the path for the typescript configuration file"
                 },
-                "react-dependency-map.webpackConfig": {
+                "dependency-map.webpackConfig": {
                     "type": "object",
                     "scope": "resource",
                     "default": "webpack.config.js",
                     "description": "Specify the path for the webpack configuration file"
                 },
-                "react-dependency-map.outputType": {
+                "dependency-map.outputType": {
                     "type": "string",
                     "scope": "resource",
                     "default": "node",
                     "enum": ["top", "folder", "node"],
                     "description": "The output type will specify the tree be generated."
                 },
-                "react-dependency-map.theme": {
+                "dependency-map.theme": {
                     "type": "string",
                     "scope": "resource",
                     "default": "basic",
                     "enum": ["basic", "simple", "blueprint", "flat", "custom"],
                     "description": "The output type will specify the tree be generated."
                 },
-                "react-dependency-map.customTheme": {
+                "dependency-map.customTheme": {
                     "type": "object",
                     "scope": "resource",
                     "description": "json for own graph style"

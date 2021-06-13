@@ -1,6 +1,6 @@
-# react-dependency-map README
+# dependency-map README
 
-This is the README for your extension "react-dependency-map". After writing up a brief description, we recommend including the following sections.
+This is the README for your extension "dependency-map". After writing up a brief description, we recommend including the following sections.
 
 ## Features
 
